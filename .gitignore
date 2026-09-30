@@ -1,0 +1,51 @@
+# cz_einn — .gitignore
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+.python-version
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+.jupyter/
+*_files/
+
+# --- Model checkpoints (never committed in the source archive) ---
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.onnx
+models/
+
+# --- Corpus / data artefacts ---------------------------------------------
+# The memmapped Chinese-news corpus is NOT part of this repository; it lives
+# outside it and must be regenerated (see README.md § "How to run").
+# The upstream dataset's terms govern any redistributed .H/.txt extracts,
+# so these are ignored by default rather than by accident.
+*.H
+*.npy
+*.npz
+*.bin
+data/
+corpus/
+tmp/
+
+# --- Notebook / analysis scratch output ---
+*.html
+*.log
+outputs/
+
+# --- Editors / OS ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
