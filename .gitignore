@@ -44,7 +44,8 @@ tmp/
 *.log
 outputs/
 
-# --- Editors / OS ---
+# --- Local agent state / editors / OS ---
+.pi/
 .DS_Store
 .idea/
 .vscode/
