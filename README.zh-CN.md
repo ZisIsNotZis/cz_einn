@@ -215,6 +215,7 @@ open("../tmp/news2016zhMin100.txt", "w").write(
 ├── README.md                     # 英文说明
 ├── README.zh-CN.md               # 本文件
 ├── LICENSE                       # AGPL-3.0-only
+├── CONTRIBUTING.md               # 贡献范围、唯一的那项检查、PR 要求
 ├── .env.example                  # 语料路径说明（notebook 不读取）
 ├── .gitignore
 ├── assets/
@@ -228,13 +229,9 @@ open("../tmp/news2016zhMin100.txt", "w").write(
 
 ## 如何贡献
 
-这是**冻结的存档**，没有可以加入的功能路线。欢迎以下类型的修正：
+这是**冻结的存档**，没有可以加入的功能路线。欢迎事实层面的修正——写错的陈述、失效的链接、无法解析的 notebook、对语料路径的澄清；但不欢迎重排或"清理" notebook，因为 Copy 编号的序列和写死的路径本身就是记录。
 
-- 事实错误、失效的相对链接、无法解析的 notebook；
-- 对语料格式或运行环境的澄清；
-- 指出缺失数据集或权重的上游来源。
-
-请不要重排、重命名或"清理" notebook——Copy 编号的序列和写死的路径本身就是记录。开一个带证据的小 PR 或 issue，并把文档修改和代码修改分开。
+贡献范围、仓库里唯一存在的那项检查（每个 notebook 必须能当作 JSON 解析）以及 PR 要求见 [`CONTRIBUTING.md`](CONTRIBUTING.md)。
 
 ---
 

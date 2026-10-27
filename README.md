@@ -215,6 +215,7 @@ Two notes read from the code, not from a run: step 2 consumes `news2016zh.H` / `
 ├── README.md                     # this file
 ├── README.zh-CN.md               # Simplified Chinese version
 ├── LICENSE                       # AGPL-3.0-only
+├── CONTRIBUTING.md               # scope, the one check, PR expectations
 ├── .env.example                  # documented corpus paths (not read by notebooks)
 ├── .gitignore
 ├── assets/
@@ -228,13 +229,9 @@ Two notes read from the code, not from a run: step 2 consumes `news2016zh.H` / `
 
 ## How to contribute
 
-This is a **frozen archive**, so there is no feature roadmap to join. Corrections are welcome:
+This is a **frozen archive**, so there is no feature roadmap to join. Factual corrections — a wrong statement, a broken link, a notebook that no longer parses, a clarification about the corpus paths — are welcome; reformatting or "cleaning up" the notebooks is not, because the copy-numbered sequence and the literal paths are the record.
 
-- a factually wrong statement, a broken relative link, or a notebook that will not parse;
-- a clarification about the corpus format or the environment;
-- an issue that points to the upstream source of a missing dataset or checkpoint.
-
-Please do **not** reformat, rename, or "clean up" the notebooks — the copy-numbered sequence and the literal paths are the record. Open a small PR or issue with the evidence, and keep changes separate from code edits.
+Scope, the one check that exists (every notebook must parse as JSON), and PR expectations: [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 
