@@ -3,7 +3,7 @@
 ## Classification
 
 Archived personal research notebooks. Not a library, not a package, not an
-application: 46 standalone Jupyter notebooks exploring one idea — describing a
+application: 45 standalone Jupyter notebooks exploring one idea — describing a
 neural network as an Einstein-summation string and building it from that string
 ("EINN", inferred to mean *Einstein-notation Neural Network*). Character-level
 Chinese language modelling, prototyped against the 2016 Chinese news corpus.
@@ -56,26 +56,30 @@ order, then keeps only characters whose frequency exceeds `max_freq / 100` —
 hence "Min100" — and remaps to a dense vocabulary. Vocabulary sizes seen in the
 code: 21482 (full charset) and 684 (the reduced set actually used).
 
-**Scale.** 46 notebooks, 273 cells, ~5430 code-cell lines (including IPython
-magics), ~376 KB.
+**Scale.** 45 notebooks, 270 cells, ~5.4k code lines (including IPython
+magics), ~263 KB. One exact duplicate (`einn5-autoencoder-Copy16.ipynb`,
+byte-identical to `einn5-autoencoder-Copy14.ipynb`) was removed during the
+public-release cleanup.
 
-**Validation run at archive time.**
+**Validation.** Every notebook parses as JSON. The archive-time run (46 files)
+recorded `ok=46 bad=0`; the current tree re-checks as `ok=45 bad=0`.
 
 ```
 # every notebook parses as JSON
-ipynb JSON ok=46 bad=0
+ipynb JSON ok=45 bad=0
 
 # .py files: 0 exist, so `python3 -m py_compile` has nothing to check
 find . -name "*.py" | wc -l   ->  0
 
-# supplementary: parse each code cell as Python after stripping !/%/? magics
+# archive-time supplementary parse of each code cell as Python after stripping
+# !/%/? magics (46-file tree; one duplicate has since been removed)
 code cells parsed ok: 210   failed: 5
 ```
 
 The 5 failures are expected notebook artefacts, not corruption: incomplete
 line-wrapped cells (`einn5-autoencoder.ipynb` cell 3), IPython-only `obj??`
 syntax not stripped by the filter (`einn3-Copy1.ipynb`, `einn5-autoencoder-Copy17.ipynb`),
-and two malformed cells in `einn5-autoencoder-Copy7.ipynb`. All 46 files are
+and two malformed cells in `einn5-autoencoder-Copy7.ipynb`. All 45 files are
 valid JSON.
 
 **Security scan.** Requested gate, run against the destination copy:
@@ -104,7 +108,9 @@ zero matches across the tree. Every external reference was already relative
 paths were left byte-identical rather than rewritten, because in an archive they
 are the evidence of what the data was; the mapping to `CZ_EINN_CORPUS` /
 `CZ_EINN_SOURCE_DIR` is documented in `README.md` and `.env.example` instead.
-Copy fidelity confirmed with `diff -r` (clean).
+Copy fidelity had been confirmed with `diff -r` (clean) before the
+public-release cleanup; the only notebook change since is the removal of the
+exact duplicate.
 
 **Deprecation.** Two independent reasons.
 
@@ -130,7 +136,7 @@ older than that date. The status label reflects the idioms, not the mtime.
 
 ## Boundaries
 
-- **No results of any kind.** Every code cell in all 46 notebooks has an empty
+- **No results of any kind.** Every code cell in all 45 notebooks has an empty
   `outputs` list. There is no stored metric, loss curve, accuracy, or
   `m.recorder.values` dump anywhere. Cells that *compute* results
   (`m.recorder.values`, `m.validate()`) do not keep them. This repo cannot be
@@ -157,9 +163,10 @@ older than that date. The status label reflects the idioms, not the mtime.
 - **Unresolved detail.** Some cells pair `Embedding(684, ...)` with a `685`-wide
   output layer. The off-by-one is unexplained — possibly a padding class,
   possibly a bug. Left as found.
-- **License: none.** No `LICENSE`, no `COPYING`, no headers. Default is all
-  rights reserved. The corpus's own terms would also govern any redistributed
-  `.H`/`.txt` extracts; none are redistributed here.
+- **License: AGPL-3.0-only.** `LICENSE` carries the GNU Affero General Public
+  License v3.0. The corpus's own terms would also govern any redistributed
+  `.H`/`.txt` extracts; none are redistributed here. `einn5-autoencoder-Copy17.ipynb`
+  references a `resnet26d` checkpoint whose provenance is not recorded.
 - **Scope of this review.** Conclusions are from reading the notebooks and the
   source tree, not from executing them — no corpus and no GPU were available.
   Claims about runtime behaviour are marked as read-inference throughout.
