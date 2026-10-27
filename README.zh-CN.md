@@ -120,7 +120,7 @@ fastai Sequential  ── Dot: torch.einsum(A,B->C) ──▶  张量
 
 ### 环境
 
-没有 `requirements.txt`，没有 lockfile，没有 `__init__.py`，也没有包结构。唯一的外部依赖是 fastai，而且只用到六个训练辅助函数：
+没有 `requirements.txt`，没有 lockfile，没有 `__init__.py`，也没有包结构。唯一的机器学习依赖是 fastai，而且只用到六个训练辅助函数：
 
 ```bash
 python -m venv .venv && . .venv/bin/activate

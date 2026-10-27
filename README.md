@@ -120,7 +120,7 @@ Deeper reading, with line-level evidence: [`docs/project-status.md`](docs/projec
 
 ### Environment
 
-There is no `requirements.txt`, lockfile, `__init__.py`, or package structure. The only external import is fastai, and it is used for six training-loop helpers:
+There is no `requirements.txt`, lockfile, `__init__.py`, or package structure. The only ML dependency is fastai, and it is used for six training-loop helpers:
 
 ```bash
 python -m venv .venv && . .venv/bin/activate
