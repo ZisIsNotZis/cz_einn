@@ -47,6 +47,13 @@ outputs/
 # --- Local agent state / editors / OS ---
 .pi/
 .DS_Store
+Thumbs.db
+desktop.ini
 .idea/
 .vscode/
 *.swp
+*.swo
+*~
+*.bak
+*.orig
+*.rej
