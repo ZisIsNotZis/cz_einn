@@ -28,7 +28,7 @@ models/
 
 # --- Corpus / data artefacts ---------------------------------------------
 # The memmapped Chinese-news corpus is NOT part of this repository; it lives
-# outside it and must be regenerated (see README.md § "How to run").
+# outside it and must be regenerated (see README.md § "How to develop").
 # The upstream dataset's terms govern any redistributed .H/.txt extracts,
 # so these are ignored by default rather than by accident.
 *.H

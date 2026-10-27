@@ -131,8 +131,8 @@ equivariant-NN literature; `Red` is a stand-in for
 `pack_padded_sequence` / masked pooling; the `np.memmap` + hand-written
 `__iter__` data path predates present-day `torch.utils.data` practice.
 
-The *files* were last saved 2026-02-13, but the idioms are roughly five years
-older than that date. The status label reflects the idioms, not the mtime.
+The idioms are five to six years older than a 2025-era reading of them. The
+status label reflects the idioms, not any file mtime.
 
 ## Boundaries
 
